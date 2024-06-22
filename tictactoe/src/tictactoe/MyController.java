@@ -20,6 +20,8 @@ public class MyController {
     private TextArea text;
 
     private boolean playerXTurn = true;
+    private int turnCount = 0;
+    private boolean gameEnded = false;
 
     @FXML
     void pressRst(ActionEvent event) {
@@ -28,12 +30,15 @@ public class MyController {
 
     public void initializeGame() {
         playerXTurn = true;
+        turnCount = 1;
+        gameEnded = false;
         int tmp = (int) ((Math.random() * 2) + 1);
+        text.setText("Game Start!\n");
         if (tmp == 1) {
             playerXTurn = false;
-            text.setText("Player O's turn");
+            text.appendText("Turn 1: Player O's turn\n");
         } else {
-            text.setText("Player X's turn");
+            text.appendText("Turn 1: Player X's turn\n");
         }
 
         grdPane.getChildren().forEach(node -> {
@@ -43,26 +48,34 @@ public class MyController {
                 button.setFont(new Font(24));
                 button.setTextFill(Color.BLACK);
                 button.setDisable(false);
+                button.setFocusTraversable(false); // Ensure buttons are not focusable by default
                 button.setOnAction(this::handleButtonClick);
             }
         });
     }
 
     private void handleButtonClick(ActionEvent event) {
+    	if (gameEnded) return;
+    	
         Button clickedButton = (Button) event.getSource();
+        
+        turnCount++;    
+        
         if (playerXTurn) {
             clickedButton.setText("X");
-            clickedButton.setTextFill(Color.RED);
-            text.setText("Player O's turn");
+            clickedButton.setTextFill(Color.RED);    
         } else {
             clickedButton.setText("O");
             clickedButton.setTextFill(Color.BLUE);
-            text.setText("Player X's turn");
-        }
+        }        
         clickedButton.setDisable(true);
-        playerXTurn = !playerXTurn;
-
+        
         checkForWin();
+        
+        if (!gameEnded) {
+            playerXTurn = !playerXTurn;
+            text.appendText("Turn " + turnCount + ": " + (playerXTurn ? "Player X's" : "Player O's") + " turn\n");
+        }
     }
 
     private void checkForWin() {
@@ -75,13 +88,16 @@ public class MyController {
         }
 
         if (isWinner(board, "X")) {
-            text.setText("Player X wins!");
+            text.appendText("Player X wins!\n");
             disableAllButtons();
+            gameEnded = true;
         } else if (isWinner(board, "O")) {
-            text.setText("Player O wins!");
+            text.appendText("Player O wins!\n");
             disableAllButtons();
+            gameEnded = true;
         } else if (isBoardFull(board)) {
-            text.setText("It's a draw!");
+            text.appendText("It's a draw!\n");
+            gameEnded = true;
         }
     }
 

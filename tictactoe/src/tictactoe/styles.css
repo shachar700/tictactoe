@@ -1,0 +1,15 @@
+.button {
+    -fx-font-size: 24px;
+}
+
+.button:focused {
+	-fx-background-color: transparent;
+}
+
+.button:hover {
+	-fx-background-color: lightblue;
+}
+
+.button:pressed {
+	-fx-background-color: #33ccff;
+}

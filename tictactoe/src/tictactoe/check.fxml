@@ -2,13 +2,12 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoe.MyController">
+<VBox xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoe.MyController" stylesheets="@styles.css">
    <children>
       <Button fx:id="rstBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#pressRst" text="Reset" />
       <TextArea fx:id="text" prefColumnCount="20" prefRowCount="3" wrapText="true" />
@@ -24,15 +23,15 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+			<Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" styleClass="button" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="1" styleClass="button" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="2" styleClass="button" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.rowIndex="1" styleClass="button" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="button" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="button" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.rowIndex="2" styleClass="button" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="button" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="button" />
          </children>
       </GridPane>
    </children>
