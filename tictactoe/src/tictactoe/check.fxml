@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoe.MyController" stylesheets="@styles.css">
+<VBox stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoe.MyController">
    <children>
+      <ChoiceBox fx:id="choiceBox" prefHeight="50" maxWidth="254" styleClass= "button" />
       <Button fx:id="rstBtn" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#pressRst" text="Reset" />
-      <TextArea fx:id="text" prefColumnCount="20" prefRowCount="3" wrapText="true" />
+      <TextArea fx:id="text" prefColumnCount="20" prefRowCount="3" prefWidth="254.0" wrapText="true" />
       <GridPane fx:id="grdPane" prefHeight="146.0" prefWidth="136.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -24,14 +26,14 @@
         </rowConstraints>
          <children>
 			<Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" styleClass="button" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="1" styleClass="button" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="2" styleClass="button" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.rowIndex="1" styleClass="button" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="button" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="button" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.rowIndex="2" styleClass="button" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="button" />
-            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2" styleClass="button" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" styleClass="button" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" styleClass="button" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" styleClass="button" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" styleClass="button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" styleClass="button" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" styleClass="button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="100.0" styleClass="button" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>

@@ -31,6 +31,8 @@ public class Main extends Application {
         primaryStage.setScene(s);
         primaryStage.getIcons().add(new Image(getClass().getClassLoader().getResource("xo.png").toString()));
         primaryStage.show();
+        
+        controller.initConfig();
         controller.initializeGame();
     }
 
