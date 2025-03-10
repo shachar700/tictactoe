@@ -1,5 +1,5 @@
 # Tictactoe
-Tictactoe in Java. Player a friend, easy, medium, impossible.
+Tictactoe in Java. Player vs a friend, AI: easy, medium, impossible.
 
 ## Screenshot
 
